@@ -10,4 +10,10 @@
 
 <script setup lang="ts"></script>
 
-<style scoped lang="less"></style>
+<style scoped lang="less">
+.container {
+  width: 375px;
+  height: 200px;
+  background-color: pink;
+}
+</style>

@@ -1,5 +1,4 @@
 import { fileURLToPath, URL } from 'node:url'
-
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
@@ -8,6 +7,11 @@ import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import path from 'path'
 import UnoCSS from 'unocss/vite'
+import progress from 'vite-plugin-progress'
+import legacy from '@vitejs/plugin-legacy'
+import viteCompression from 'vite-plugin-compression'
+import { visualizer } from 'rollup-plugin-visualizer'
+
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
@@ -19,9 +23,21 @@ export default defineConfig({
     Components({
       resolvers: [ElementPlusResolver()]
     }),
-    UnoCSS()
+    UnoCSS(),
+    progress(),
+    //优化包体积
+    {
+      ...legacy({
+        targets: ['defaults', 'not IE 11']
+      }),
+      apply: 'build'
+    },
+    //压缩代码
+    { ...viteCompression(), apply: 'build' },
+    visualizer()
   ],
   resolve: {
+    extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.vue', '.json'],
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
