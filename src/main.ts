@@ -1,6 +1,6 @@
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
-import './assets/main.css'
+import './assets/main.less'
 import 'lib-flexible/flexible.js'
 import 'virtual:uno.css'
 import ElementPlus from 'element-plus'

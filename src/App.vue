@@ -1,10 +1,15 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
+const changeTheme = () => {
+  document.body.classList.toggle("dark");
+};
 </script>
 
 <template>
-  <Main />
-  <RouterView />
+  <div class="Box">
+    <Main />
+    <RouterView />
+  </div>
 </template>
 
-<style scoped></style>
+<style scoped lang="less"></style>

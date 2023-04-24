@@ -18,9 +18,12 @@ export default defineConfig({
     vue(),
     vueJsx(),
     AutoImport({
+      imports: ['vue', 'vue-router'],
       resolvers: [ElementPlusResolver()]
     }),
     Components({
+      dts: true,
+      dirs: ['src/components'], // 按需加载的文件夹
       resolvers: [ElementPlusResolver()]
     }),
     UnoCSS(),
@@ -62,6 +65,7 @@ export default defineConfig({
   server: {
     open: true,
     host: '0.0.0.0',
-    port: 8000
+    port: 8000,
+    hmr: true
   }
 })

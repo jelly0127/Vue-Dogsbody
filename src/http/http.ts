@@ -4,6 +4,8 @@
 import axios from 'axios'
 import { ElMessage } from 'element-plus'
 import CONFIG from '../config/index'
+import { getToken } from '../utils/setToken.js'
+
 axios.defaults.timeout = 1000
 axios.defaults.baseURL = CONFIG.BASE_URL
 /**
@@ -13,7 +15,8 @@ axios.interceptors.request.use(
   (config: any) => {
     config.data = JSON.stringify(config.data)
     config!.headers = {
-      'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
+      'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
+      token: getToken('token')
     }
     return config
   },

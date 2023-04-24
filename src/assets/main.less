@@ -1,0 +1,59 @@
+@import './base.css';
+
+div,
+a,
+button,
+li {
+  display: flex;
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+
+  :focus {
+    outline: none;
+  }
+}
+
+div,
+p {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+
+body {
+  color: #333;
+  background: #fff;
+}
+
+a {
+  color: #666;
+}
+
+/* 黑色模式样式 dark */
+body.dark {
+  color: #eee;
+  background: #111;
+}
+
+body.dark a {
+  color: #ccc;
+}
