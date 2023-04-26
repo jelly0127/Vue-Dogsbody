@@ -40,20 +40,21 @@ button {
 
 
 body {
-  color: #333;
-  background: #fff;
+  position: relative;
+  min-height: 100vh;
+  font-size: 16px !important;
+  color: #fff;
+  background: linear-gradient(113.54deg,
+      rgba(103, 58, 194, 0.5) 10.91%,
+      rgba(122, 74, 221, 0.398) 25.92%,
+      rgba(209, 103, 255, 0.03) 55.76%),
+    linear-gradient(160.75deg, #7a4add 41.37%, #d57bff 98.29%);
+
 }
 
-a {
-  color: #666;
-}
 
 /* 黑色模式样式 dark */
-body.dark {
-  color: #eee;
-  background: #111;
-}
-
-body.dark a {
-  color: #ccc;
+body.light {
+  color: #111;
+  background: #fff;
 }

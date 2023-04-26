@@ -4,7 +4,7 @@
  * Main.vue
 -->
 <template>
-  <div class="container"></div>
+  <Header></Header>
 </template>
 
 <script setup lang="ts"></script>
