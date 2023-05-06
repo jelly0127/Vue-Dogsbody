@@ -9,15 +9,25 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    Brother: typeof import('./src/components/Test/brother.vue')['default']
+    Cart: typeof import('./src/components/Test/Cart.vue')['default']
+    Child: typeof import('./src/components/Test/Child.vue')['default']
     ElButton: typeof import('element-plus/es')['ElButton']
     ElCard: typeof import('element-plus/es')['ElCard']
     ElForm: typeof import('element-plus/es')['ElForm']
     ElFormItem: typeof import('element-plus/es')['ElFormItem']
     ElInput: typeof import('element-plus/es')['ElInput']
+    ElRadioButton: typeof import('element-plus/es')['ElRadioButton']
+    ElRadioGroup: typeof import('element-plus/es')['ElRadioGroup']
+    Farther: typeof import('./src/components/Test/Farther.vue')['default']
     Header: typeof import('./src/components/Header/Header.vue')['default']
     Home: typeof import('./src/components/Home.vue')['default']
     Login: typeof import('./src/components/Login.vue')['default']
+    MyHook: typeof import('./src/components/Test/myHook.vue')['default']
+    MySlot: typeof import('./src/components/Test/mySlot.vue')['default']
+    MyWatch: typeof import('./src/components/Test/MyWatch.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    Son: typeof import('./src/components/Test/Son.vue')['default']
   }
 }

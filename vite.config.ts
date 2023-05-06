@@ -15,7 +15,13 @@ import { visualizer } from 'rollup-plugin-visualizer'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
-    vue(),
+    vue({
+      template: {
+        compilerOptions: {
+          isCustomElement: (tag) => tag.startsWith('iconpark-')
+        }
+      }
+    }),
     vueJsx(),
     AutoImport({
       imports: ['vue', 'vue-router'],
@@ -57,7 +63,7 @@ export default defineConfig({
           less: {
             javascriptEnabled: true
           },
-          patterns: [path.resolve(__dirname, './src/assets/base.css')]
+          patterns: [path.resolve(__dirname, './src/assets/main.less')]
         }
       }
     }

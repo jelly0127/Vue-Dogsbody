@@ -8,7 +8,7 @@ export const useDataStore = defineStore('app', {
   state: () => ({
     app: <appData>{
       isDark: true,
-      title: 'hello localStorage'
+      title: 'hello pinia localStorage'
     }
 
   }),
@@ -21,7 +21,7 @@ export const useDataStore = defineStore('app', {
     enabled: true,
     strategies: [
       {
-        key: 'test',
+        key: 'app',
         storage: localStorage,
       },
     ],

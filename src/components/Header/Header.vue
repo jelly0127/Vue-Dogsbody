@@ -19,7 +19,7 @@
 
 <script setup lang="ts">
 import { useDataStore } from '@/stores/appData';
-import { onMounted } from 'vue';
+import { onMounted, watchEffect } from 'vue';
 
 
 const store = useDataStore()
@@ -31,14 +31,20 @@ onMounted(() => {
 
 
 })
+// watchEffect(() => {
+//   console.log(store.app.isDark);
+
+// })
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 .root_box {
   width: 100%;
   align-items: center;
   justify-content: center;
   border-bottom: 1px solid rgb(230, 227, 227);
+  position: sticky;
+  top: 0;
 }
 
 .container {
@@ -46,8 +52,8 @@ onMounted(() => {
   align-items: center;
   justify-content: space-between;
   max-width: 1200px;
-  padding: 5px 10px;
-  height: 50px;
+  padding: 0 10px;
+  height: 46px;
 }
 
 .left_box {
@@ -55,8 +61,8 @@ onMounted(() => {
   align-items: center;
 
   .logo {
-    height: 36px;
-    width: 36px;
+    height: 30px;
+    width: 30px;
     content: url('./images/DOG3.svg') !important;
   }
 

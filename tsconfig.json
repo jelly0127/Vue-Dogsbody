@@ -13,5 +13,8 @@
   ],
   "compilerOptions": {
     "allowJs": true,
+    "jsx": "preserve",
+    "jsxFactory": "h",
+    "jsxFragmentFactory": "Fragment",
   },
 }
